@@ -32,4 +32,10 @@ inline void UWarriorInputComponent::BindNativeInputAction(const UDataAsset_Input
 	{
 		BindAction(FoundAction, TriggerEvent, ContextObject, Func);
 	}
+	else
+	{
+		FString TagName = InInputTag.ToString();
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Failed to find Input Action for Tag: %s"), *TagName));
+	}
+	
 }

@@ -32,7 +32,19 @@ protected:
 
 #pragma endregion
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "CharacterData", meta = (AllowPrivateAccess = "true"))
+	
+
+#pragma region Inputs
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "CharacterData", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class UDataAsset_InputConfig> InputConfigDataAsset;
+
+	UFUNCTION()
+	void Input_Move(const FInputActionValue& InputActionValue);
+
+	UFUNCTION()
+	void Input_Look(const FInputActionValue& InputActionValue);
+
+#pragma endregion
 
 };
