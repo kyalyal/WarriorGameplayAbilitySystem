@@ -2,11 +2,14 @@
 
 
 #include "Characters/WarriorHeroCharacter.h"
-#include "WarriorDebugHelper.h"
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "EnhancedInputSubsystems.h"
+
+#include "WarriorDebugHelper.h"
+
 
 AWarriorHeroCharacter::AWarriorHeroCharacter()
 {
@@ -31,6 +34,15 @@ AWarriorHeroCharacter::AWarriorHeroCharacter()
 	GetCharacterMovement()->RotationRate = FRotator(0.f, 500.f, 0.f);
 	GetCharacterMovement()->MaxWalkSpeed = 400.f;
 	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
+}
+
+void AWarriorHeroCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+	ULocalPlayer* LocalPlayer = GetController<APlayerController>()->GetLocalPlayer();
+
+	UEnhancedInputLocalPlayerSubsystem Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(LocalPlayer);
+
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
 void AWarriorHeroCharacter::BeginPlay()

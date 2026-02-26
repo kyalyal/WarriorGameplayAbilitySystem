@@ -18,6 +18,7 @@ public:
 	AWarriorHeroCharacter();
 
 protected:
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	virtual void BeginPlay() override;
 	
 
@@ -30,4 +31,8 @@ protected:
 	TObjectPtr<class UCameraComponent> FollowCamera;
 
 #pragma endregion
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "CharacterData", meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<class UDataAsset_InputConfig> InputConfigDataAsset;
+
 };
