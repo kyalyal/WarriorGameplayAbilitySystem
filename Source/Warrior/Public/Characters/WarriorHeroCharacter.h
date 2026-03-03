@@ -6,6 +6,8 @@
 #include "Characters/WarriorBaseCharacter.h"
 #include "WarriorHeroCharacter.generated.h"
 
+
+
 /**
  * 
  */
@@ -32,6 +34,9 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class UCameraComponent> FollowCamera;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Combat", meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<class UHeroCombatComponent> HeroCombatComponent;
+
 #pragma endregion
 
 	
@@ -49,4 +54,7 @@ protected:
 
 #pragma endregion
 
+
+public:
+	FORCEINLINE UHeroCombatComponent* GetHeroCombatComopnent() const { return HeroCombatComponent; }
 };
