@@ -13,6 +13,7 @@
 class UWarriorAbilitySystemComponent;
 class UWarriorGameplayAbility;
 
+
 UCLASS()
 class WARRIOR_API UDataAsset_StartUpDataBase : public UDataAsset
 {

@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Characters/WarriorBaseCharacter.h"
+#include "GameplayTagContainer.h"
+
 #include "WarriorHeroCharacter.generated.h"
 
 
@@ -51,6 +53,12 @@ protected:
 
 	UFUNCTION()
 	void Input_Look(const FInputActionValue& InputActionValue);
+
+	UFUNCTION()
+	void Input_AbilityInputPressed(FGameplayTag InputTag);
+	
+	UFUNCTION()
+	void Input_AbilityInputReleased(FGameplayTag InputTag);
 
 #pragma endregion
 
