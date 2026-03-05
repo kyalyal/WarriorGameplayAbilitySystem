@@ -7,6 +7,7 @@
 #include "AbilitySystem/Abilities/WarriorGameplayAbility.h"
 
 
+
 void UDataAsset_StartUpDataBase::GiveToAbilitySystemComponent(UWarriorAbilitySystemComponent* InASCToGive, int32 ApplyLevel)
 {
 	check(InASCToGive);
